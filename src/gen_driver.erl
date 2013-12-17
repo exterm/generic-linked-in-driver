@@ -115,7 +115,7 @@ start_link(Path, Name) ->
         name = Name
       }, []);
     { error, Reason } ->
-      { error, Reason }
+      { error, erl_ddll:format_error(Reason) }
   end.
 
 %% ----------------------------------------------------------------------------
